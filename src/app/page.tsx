@@ -1,11 +1,9 @@
 "use client";
 
 import {
-  Award,
   Building2,
   ChevronRight,
   ExternalLink,
-  Heart,
   HeartHandshake,
   MapPin,
   MessageCircle,
@@ -14,13 +12,13 @@ import {
   Phone,
   Play,
   QrCode,
-  Quote,
   Road,
   ScanLine,
   School,
   Share2,
   Star,
   Stethoscope,
+  Sun,
   Users,
 } from "lucide-react";
 import Image from "next/image";
@@ -32,60 +30,60 @@ const achievements = [
   {
     icon: Building2,
     stat: "500+",
-    title: "வீடுகள் கட்டப்பட்டன",
-    desc: "PMAY திட்டத்தின் கீழ் வெள்ளத்தால் பாதிக்கப்பட்ட குடும்பங்களுக்கு புதிய வீடுகள் கட்டித் தரப்பட்டன",
-    gradient: "from-amber-400 to-orange-500",
+    title: "குடியிருப்புகள் மேம்படுத்தப்பட்டன",
+    desc: "அண்ணா நகர் பகுதியில் PMAY திட்டத்தின் கீழ் குடியிருப்புகள் புனரமைக்கப்பட்டன. நகர்ப்புற ஏழைகளுக்கு கட்டுப்படியான வீடுகள் வழங்கப்பட்டன",
+    gradient: "from-red-500 to-red-700",
   },
   {
     icon: School,
     stat: "3",
     title: "புதிய பள்ளிகள் நிறுவப்பட்டன",
-    desc: "தமிழ் வழிப் பள்ளிகளில் கணினி ஆய்வகங்கள் அமைக்கப்பட்டன. மாணவர்கள் டிஜிட்டல் கல்வி பெற வழி ஏற்படுத்தப்பட்டது",
-    gradient: "from-blue-400 to-indigo-500",
+    desc: "அரசு தமிழ் வழிப் பள்ளிகளில் ஸ்மார்ட் வகுப்பறைகள் மற்றும் கணினி ஆய்வகங்கள் அமைக்கப்பட்டன. மாணவர்களுக்கு டிஜிட்டல் கல்வி வாய்ப்பு",
+    gradient: "from-blue-500 to-indigo-600",
   },
   {
     icon: Stethoscope,
     stat: "50+",
     title: "இலவச மருத்துவ முகாம்கள்",
-    desc: "25,000+ குடியிருப்பாளர்களுக்கு இலவச சுகாதார சேவைகள் வழங்கப்பட்டன. நீரிழிவு, ரத்த அழுத்தம் பரிசோதனைகள் நடத்தப்பட்டன",
-    gradient: "from-emerald-400 to-teal-500",
+    desc: "25,000+ குடியிருப்பாளர்களுக்கு இலவச சுகாதார சேவைகள். நீரிழிவு, ரத்த அழுத்தம், கண் பரிசோதனைகள் நடத்தப்பட்டன",
+    gradient: "from-emerald-500 to-teal-600",
   },
   {
     icon: Road,
     stat: "120 km",
     title: "சாலை மேம்பாடு",
-    desc: "கிராமப்புற சாலைகள் புதுப்பிக்கப்பட்டன — பயண நேரம் 40% குறைக்கப்பட்டது. பள்ளி செல்லும் குழந்தைகளுக்கு பாதுகாப்பான பாதை",
-    gradient: "from-purple-400 to-pink-500",
+    desc: "அண்ணா நகர், கீழ்ப்பாக்கம், அமிஞ்சிக்கரை பகுதிகளில் சாலைகள் புதுப்பிக்கப்பட்டன — பயண நேரம் 40% குறைக்கப்பட்டது",
+    gradient: "from-amber-500 to-orange-600",
   },
   {
     icon: Users,
     stat: "200+",
     title: "பெண்கள் சுய உதவிக் குழுக்கள்",
     desc: "நுண்கடன் மற்றும் திறன் பயிற்சி திட்டங்கள் மூலம் பெண்கள் பொருளாதார சுதந்திரம் பெற்றனர்",
-    gradient: "from-rose-400 to-red-500",
+    gradient: "from-purple-500 to-pink-600",
   },
 ];
 
 const testimonials = [
   {
     name: "லட்சுமி தேவி",
-    ward: "வார்டு 42",
+    ward: "அண்ணா நகர் மேற்கு",
     quote:
-      "கடந்த 2 ஆண்டுகளாக எங்கள் பகுதியில் வடிகால் பிரச்சனை இருந்தது. கவியரசு அவர்களிடம் புகார் அளித்த 10 நாட்களில் பிரச்சனை தீர்க்கப்பட்டது. இப்போது மழைக்காலத்தில் கூட தண்ணீர் தேங்குவதில்லை.",
+      "கடந்த 2 ஆண்டுகளாக எங்கள் பகுதியில் வடிகால் பிரச்சனை இருந்தது. சித்ரராசு அவர்களிடம் புகார் அளித்த 10 நாட்களில் பிரச்சனை தீர்க்கப்பட்டது. இப்போது மழைக்காலத்தில் கூட தண்ணீர் தேங்குவதில்லை.",
     avatar: "ல",
     color: "bg-red-100 text-red-700",
   },
   {
     name: "முருகன் க.",
-    ward: "வார்டு 38",
+    ward: "கீழ்ப்பாக்கம்",
     quote:
-      "என் குழந்தைகளை அரசு பள்ளியில் சேர்க்க முடியாமல் திணறினேன். கவியரசு உதவியால் சேர்க்கை கிடைத்தது. இப்போது இரண்டு குழந்தைகளும் நன்றாக படிக்கிறார்கள்.",
+      "என் குழந்தைகளை அரசு பள்ளியில் சேர்க்க முடியாமல் திணறினேன். சித்ரராசு உதவியால் சேர்க்கை கிடைத்தது. இப்போது இரண்டு குழந்தைகளும் ஸ்மார்ட் வகுப்பறையில் படிக்கிறார்கள்.",
     avatar: "மு",
     color: "bg-blue-100 text-blue-700",
   },
   {
     name: "பாத்திமா பேகம்",
-    ward: "வார்டு 45",
+    ward: "அமிஞ்சிக்கரை",
     quote:
       "இலவச மருத்துவ முகாமில் என் சர்க்கரை நோய் கண்டறியப்பட்டது. சரியான நேரத்தில் சிகிச்சை தொடங்கினேன். இந்த முகாம் எனக்கு வரப்பிரசாதம்.",
     avatar: "பா",
@@ -93,11 +91,11 @@ const testimonials = [
   },
   {
     name: "ரவி சங்கர்",
-    ward: "வார்டு 41",
+    ward: "ஷீனாய் நகர்",
     quote:
-      "எங்கள் கிராமத்திற்கு புதிய சாலை போடப்பட்டது. முன்பு 1 மணி நேரம் ஆன பயணம் இப்போது 30 நிமிடத்தில் முடிகிறது. பள்ளிக்குச் செல்லும் குழந்தைகள் மிகவும் மகிழ்ச்சி.",
+      "எங்கள் பகுதிக்கு புதிய சாலை போடப்பட்டது. முன்பு 1 மணி நேரம் ஆன பயணம் இப்போது 30 நிமிடத்தில் முடிகிறது. மிகவும் நன்றி.",
     avatar: "ர",
-    color: "bg-purple-100 text-purple-700",
+    color: "bg-amber-100 text-amber-700",
   },
 ];
 
@@ -165,30 +163,31 @@ export default function CandidateStoryTamil() {
       </header>
 
       <main className="flex-1">
-        {/* ───────── HERO — DARK RED GRADIENT ───────── */}
-        <section className="relative bg-gradient-to-b from-red-900 via-red-800 to-red-900 pt-8 pb-14 md:pt-12 md:pb-20 px-4 overflow-hidden">
-          {/* Decorative bg elements */}
+        {/* ───────── HERO — DMK RED-BLACK GRADIENT ───────── */}
+        <section className="relative bg-gradient-to-b from-black via-red-950 to-red-900 pt-8 pb-14 md:pt-12 md:pb-20 px-4 overflow-hidden">
+          {/* Decorative bg */}
           <div className="absolute inset-0 pointer-events-none">
-            <div className="absolute top-10 left-10 w-64 h-64 bg-red-700/30 rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-80 h-80 bg-orange-700/20 rounded-full blur-3xl" />
+            <div className="absolute top-10 left-10 w-64 h-64 bg-red-800/30 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 right-10 w-80 h-80 bg-red-700/20 rounded-full blur-3xl" />
+            <div className="absolute top-20 right-20 w-40 h-40 bg-yellow-500/5 rounded-full blur-2xl" />
           </div>
 
           <div className="relative max-w-4xl mx-auto text-center">
             {/* Election Badge */}
             <div className="mb-6">
               <span className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white/90 text-xs md:text-sm font-medium px-5 py-2 rounded-full border border-white/20">
-                <Award className="w-3.5 h-3.5" />
-                2026 தமிழ்நாடு சட்டமன்றத் தேர்தல்
+                <Sun className="w-4 h-4 text-yellow-400" />
+                2026 தமிழ்நாடு சட்டமன்றத் தேர்தல் — 23.04.2026
               </span>
             </div>
 
             {/* Candidate Photo */}
             <div className="relative inline-block mb-6">
-              <div className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-gradient-to-br from-amber-400 to-orange-400 p-1 mx-auto shadow-2xl">
+              <div className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-gradient-to-br from-red-500 to-red-700 p-1 mx-auto shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
                     src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
-                    alt="திரு. மு. கவியரசு"
+                    alt="நெ. சித்ரராசு"
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
@@ -196,37 +195,46 @@ export default function CandidateStoryTamil() {
                   />
                 </div>
               </div>
+              {/* DMK Symbol Badge */}
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-700 text-white text-[11px] font-bold px-4 py-1.5 rounded-full shadow-lg whitespace-nowrap border border-red-400/30">
+                <Sun className="w-3 h-3 inline-block mr-1 -mt-0.5 text-yellow-400" />
+                உதயசூரியன்
+              </div>
             </div>
 
             {/* Name & Party */}
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">
-              திரு. மு. கவியரசு
+              நெ. சித்ரராசு
             </h1>
-            <p className="text-base md:text-lg text-white/70 font-medium mb-2">
-              தமிழ் மக்கள் முன்னேற்ற கழகம்
+            <p className="text-xs text-white/40 mb-2">M.A., M.Phil.</p>
+            <p className="text-base md:text-lg text-red-300 font-semibold mb-2">
+              திராவிட முன்னேற்ற கழகம் (DMK)
             </p>
-            <div className="flex items-center justify-center gap-1.5 text-white/60 mb-5">
+            <div className="flex items-center justify-center gap-1.5 text-white/60 mb-2">
               <MapPin className="w-4 h-4" />
               <span className="text-sm">
-                திருவண்ணாமலை | வார்டு 42 — அருணாசலேஸ்வரர் கிழக்கு
+                சென்னை மேற்கு மாவட்டம் | அண்ணா நகர் சட்டமன்றத் தொகுதி
               </span>
             </div>
+            <p className="text-xs text-white/40 mb-5">
+              தொகுதி எண் 21 · சென்னை மத்திய நாடாளுமன்றத் தொகுதி
+            </p>
 
             {/* Tagline */}
-            <p className="text-lg md:text-2xl font-semibold text-amber-300 mb-8 max-w-lg mx-auto leading-relaxed">
-              &ldquo;உங்கள் தொகுதிக்கு ஒரு புதிய குரல்&rdquo;
+            <p className="text-lg md:text-2xl font-semibold text-yellow-300 mb-8 max-w-lg mx-auto leading-relaxed">
+              &ldquo;அண்ணா நகர் தொகுதியை கழகத்தின் கோட்டையாக நிலைநிறுத்துவேன்&rdquo;
             </p>
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-6 md:gap-10 mb-8">
               {[
                 { icon: ScanLine, value: "1,247", label: "ஸ்கேன்கள்" },
-                { icon: MapPin, value: "42", label: "வார்டுகள்" },
+                { icon: Users, value: "3,14,294", label: "மக்கள் தொகை" },
                 { icon: MessageCircle, value: "328", label: "புகார்கள் பதிவு" },
               ].map((s, i) => (
                 <div key={i} className="flex flex-col items-center">
                   <div className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm border border-white/10 flex items-center justify-center mb-1.5">
-                    <s.icon className="w-5 h-5 text-amber-300" />
+                    <s.icon className="w-5 h-5 text-yellow-400" />
                   </div>
                   <span className="text-xl md:text-2xl font-bold text-white">
                     {s.value}
@@ -238,9 +246,27 @@ export default function CandidateStoryTamil() {
               ))}
             </div>
 
+            {/* Party Leaders */}
+            <div className="flex items-center justify-center gap-6 mb-8">
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-1.5 text-xl font-bold text-white/80">
+                  S
+                </div>
+                <p className="text-[10px] text-white/50">கழகத் தலைவர்</p>
+                <p className="text-[11px] text-white/70 font-semibold">மு.க. ஸ்டாலின்</p>
+              </div>
+              <div className="text-center">
+                <div className="w-14 h-14 rounded-full bg-white/10 border border-white/20 flex items-center justify-center mx-auto mb-1.5 text-xl font-bold text-white/80">
+                  U
+                </div>
+                <p className="text-[10px] text-white/50">இளைஞரணிச் செயலாளர்</p>
+                <p className="text-[11px] text-white/70 font-semibold">உதயநிதி ஸ்டாலின்</p>
+              </div>
+            </div>
+
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-amber-500 text-white font-semibold rounded-full py-3 px-7 hover:bg-amber-600 transition-colors shadow-lg text-sm">
+              <button className="w-full sm:w-auto flex items-center justify-center gap-2 bg-red-600 text-white font-semibold rounded-full py-3 px-7 hover:bg-red-700 transition-colors shadow-lg text-sm border border-red-500/50">
                 <Play className="w-4 h-4" />
                 என் செய்தியைப் பாருங்கள்
               </button>
@@ -264,17 +290,17 @@ export default function CandidateStoryTamil() {
         >
           <div className="max-w-3xl mx-auto text-center">
             {/* Red play icon */}
-            <div className="w-12 h-12 rounded-full bg-red-500 flex items-center justify-center mx-auto mb-5 shadow-lg">
+            <div className="w-12 h-12 rounded-full bg-red-600 flex items-center justify-center mx-auto mb-5 shadow-lg">
               <Play className="w-5 h-5 text-white ml-0.5" />
             </div>
 
             <h2 className="text-xl md:text-2xl font-bold text-charcoal-dark mb-2">
-              வார்டு 42 — அருணாசலேஸ்வரர் கிழக்கு
+              அண்ணா நகர் தொகுதி
               <br />
               மக்களுக்கு ஒரு செய்தி
             </h2>
             <p className="text-sm text-charcoal-light mb-6">
-              உங்கள் தொகுதிக்கு ஒரு புதிய குரல் — கவியரசு பேசுகிறார்
+              சென்னை மேற்கு மாவட்டம் — நெ. சித்ரராசு பேசுகிறார்
             </p>
 
             {/* Video Thumbnail */}
@@ -286,32 +312,29 @@ export default function CandidateStoryTamil() {
                 height={400}
                 className="w-full h-full object-cover opacity-70"
               />
-              {/* Play button overlay */}
               <div className="absolute inset-0 flex flex-col items-center justify-center">
                 <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-2xl cursor-pointer hover:bg-white hover:scale-105 transition-all">
                   <Play className="w-7 h-7 text-red-600 ml-1" />
                 </div>
                 <p className="text-white text-sm font-medium mt-3">
-                  திரு. மு. கவியரசு
+                  நெ. சித்ரராசு
                 </p>
               </div>
-              {/* Duration */}
               <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-2.5 py-1 rounded-lg">
                 1:00
               </div>
             </div>
 
-            {/* Complaint Card — Pink/Coral Gradient */}
-            <div className="bg-gradient-to-br from-red-400 via-rose-400 to-pink-400 rounded-3xl p-6 md:p-8 text-white text-left shadow-lg mb-6">
+            {/* Complaint Card — DMK Red Gradient */}
+            <div className="bg-gradient-to-br from-red-600 via-red-500 to-rose-500 rounded-3xl p-6 md:p-8 text-white text-left shadow-lg mb-6">
               <h3 className="text-lg md:text-xl font-bold mb-2">
                 வேட்பாளரிடம் உங்கள்
                 <br />
                 பிரச்சினையைச் சொல்லுங்கள்
               </h3>
               <p className="text-white/80 text-sm mb-5 leading-relaxed">
-                உங்கள் பகுதியில் உள்ள பிரச்சினைகளை நேரடியாக வேட்பாளரிடம்
-                தெரிவிக்கவும். 328 புகார்கள் பதிவு — 89% 7 நாட்களுக்குள்
-                தீர்க்கப்பட்டது.
+                அண்ணா நகர், கீழ்ப்பாக்கம், அமிஞ்சிக்கரை, ஷீனாய் நகர் பகுதிகளில் உள்ள
+                பிரச்சினைகளை நேரடியாக வேட்பாளரிடம் தெரிவிக்கவும்.
               </p>
               <div className="flex flex-col sm:flex-row gap-2.5 mb-4">
                 <input
@@ -320,7 +343,7 @@ export default function CandidateStoryTamil() {
                   className="flex-1 bg-white/20 backdrop-blur-sm border border-white/30 rounded-xl px-4 py-3 text-sm text-white placeholder:text-white/60 focus:outline-none focus:ring-2 focus:ring-white/40"
                 />
                 <div className="flex gap-2">
-                  <button className="flex items-center justify-center gap-2 bg-white text-red-500 font-semibold rounded-xl py-3 px-5 hover:bg-white/90 transition-colors text-sm whitespace-nowrap">
+                  <button className="flex items-center justify-center gap-2 bg-white text-red-600 font-semibold rounded-xl py-3 px-5 hover:bg-white/90 transition-colors text-sm whitespace-nowrap">
                     <PenLine className="w-4 h-4" />
                     புகார் எழுத
                   </button>
@@ -371,7 +394,7 @@ export default function CandidateStoryTamil() {
                 நாம் ஒன்றாகச் செய்தவை
               </h2>
               <p className="text-sm text-charcoal-light">
-                சமூக மேம்பாட்டிற்கான நமது முக்கிய முயற்சிகள்
+                அண்ணா நகர் தொகுதியின் சமூக மேம்பாட்டிற்கான முக்கிய முயற்சிகள்
               </p>
             </div>
 
@@ -422,7 +445,7 @@ export default function CandidateStoryTamil() {
                 தொகுதி மக்களின் குரல்
               </h2>
               <p className="text-sm text-charcoal-light">
-                மக்கள் என்ன சொல்கிறார்கள்
+                அண்ணா நகர் மக்கள் என்ன சொல்கிறார்கள்
               </p>
             </div>
 
@@ -481,15 +504,17 @@ export default function CandidateStoryTamil() {
               </p>
             </div>
 
-            {/* Card with shadow */}
             <div className="bg-white rounded-3xl shadow-floating border border-warm-200/60 overflow-hidden">
-              {/* Red header bar */}
-              <div className="bg-gradient-to-r from-red-800 to-red-900 p-5 text-center">
-                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-amber-400 to-orange-400 p-0.5 mx-auto mb-3">
+              {/* DMK Red-Black header */}
+              <div className="bg-gradient-to-r from-black via-red-950 to-red-900 p-5 text-center relative overflow-hidden">
+                <div className="absolute top-2 right-3">
+                  <Sun className="w-5 h-5 text-yellow-400/40" />
+                </div>
+                <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-700 p-0.5 mx-auto mb-3">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <Image
                       src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256&h=256&fit=crop&crop=face"
-                      alt="திரு. மு. கவியரசு"
+                      alt="நெ. சித்ரராசு"
                       width={256}
                       height={256}
                       className="w-full h-full object-cover"
@@ -497,20 +522,19 @@ export default function CandidateStoryTamil() {
                   </div>
                 </div>
                 <h3 className="text-base font-bold text-white mb-0.5">
-                  திரு. மு. கவியரசு
+                  நெ. சித்ரராசு
                 </h3>
-                <p className="text-xs text-white/60">
-                  தமிழ் மக்கள் முன்னேற்ற கழகம்
+                <p className="text-[11px] text-red-300 font-medium mb-1">
+                  திராவிட முன்னேற்ற கழகம்
                 </p>
+                <div className="inline-flex items-center gap-1 text-[10px] text-white/50">
+                  <MapPin className="w-3 h-3" />
+                  அண்ணா நகர் — தொகுதி 21
+                </div>
               </div>
 
               {/* Card body */}
               <div className="p-5 text-center">
-                <div className="flex items-center justify-center gap-1.5 text-[11px] text-charcoal-light mb-4">
-                  <MapPin className="w-3 h-3" />
-                  வார்டு 42 — அருணாசலேஸ்வரர் கிழக்கு
-                </div>
-
                 {/* Phone */}
                 <a
                   href="tel:+919876543210"
@@ -540,7 +564,7 @@ export default function CandidateStoryTamil() {
                       அருகிலுள்ள கட்சி அலுவலகம்
                     </p>
                     <p className="text-[10px] text-charcoal-light">
-                      12, அண்ணா சாலை, திருவண்ணாமலை — 606601
+                      அண்ணா நகர், சென்னை — 600040
                     </p>
                   </div>
                   <ExternalLink className="w-3.5 h-3.5 text-charcoal-light/40 flex-shrink-0" />
@@ -569,30 +593,30 @@ export default function CandidateStoryTamil() {
           }`}
         >
           <div className="max-w-3xl mx-auto text-center">
-            <div className="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 rounded-3xl p-7 md:p-12 border border-amber-200/40">
+            <div className="bg-gradient-to-br from-red-50 via-orange-50 to-amber-50 rounded-3xl p-7 md:p-12 border border-red-200/30">
               <h2 className="text-xl md:text-2xl font-bold text-charcoal-dark mb-4 leading-relaxed">
                 உங்கள் வாக்கே உங்கள் குரல்
               </h2>
               <p className="text-charcoal-light text-sm leading-relaxed mb-5 max-w-xl mx-auto">
                 இந்தத் தொகுதி வெறும் ஒரு எண் அல்ல — இது நம் வீடு, நம் பள்ளி,
-                நம் சாலை, நம் எதிர்காலம். உங்கள் குரலை உலகிற்கு கேட்க வையுங்கள்.
-                ஒவ்வொரு வாக்கும் ஒரு மாற்றத்தின் தொடக்கம். உங்கள் ஆதரவும்
-                நம்பிக்கையும் எனக்கு மிகுந்த பலம்.
+                நம் சாலை, நம் எதிர்காலம். அண்ணா நகர் தொகுதியை கழகத்தின்
+                கோட்டையாக நிலைநிறுத்த அயராது உழைப்பேன் என உறுதியளிக்கிறேன்.
+                உங்கள் ஆதரவும் நம்பிக்கையும் எனக்கு மிகுந்த பலம்.
               </p>
               <p className="text-charcoal-light text-sm mb-1">
-                அன்புடனும் அர்ப்பணிப்புடனும்,
+                நன்றியுடனும் அர்ப்பணிப்புடனும்,
               </p>
               <p className="text-red-700 font-bold text-base">
-                திரு. மு. கவியரசு
+                நெ. சித்ரராசு
               </p>
 
               {/* Stars */}
               <div className="flex items-center justify-center gap-1 mt-5">
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
-                <Star className="w-5 h-5 text-amber-400 fill-amber-400" />
+                <Star className="w-5 h-5 text-red-600 fill-red-600" />
+                <Star className="w-5 h-5 text-black fill-black" />
+                <Star className="w-5 h-5 text-red-600 fill-red-600" />
+                <Star className="w-5 h-5 text-black fill-black" />
+                <Star className="w-5 h-5 text-red-600 fill-red-600" />
               </div>
             </div>
           </div>
@@ -617,6 +641,9 @@ export default function CandidateStoryTamil() {
           </div>
           <p className="text-[11px] text-charcoal-light mb-1">
             Stories worth keeping. Gifts worth giving.
+          </p>
+          <p className="text-[10px] text-charcoal-light/40 mb-1">
+            திமுக · அண்ணா நகர் · உருவாக்கம் Ownstory
           </p>
           <p className="text-[10px] text-charcoal-light/40">
             &copy; 2026 ownstory. All rights reserved.
