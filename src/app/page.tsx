@@ -186,7 +186,7 @@ export default function CandidateStoryTamil() {
               <div className="w-32 h-32 md:w-44 md:h-44 rounded-full bg-gradient-to-br from-red-500 to-red-700 p-1 mx-auto shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face"
+                    src="/candidate.jpg"
                     alt="நெ. சித்ரராசு"
                     width={400}
                     height={400}
@@ -502,7 +502,7 @@ export default function CandidateStoryTamil() {
                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-red-500 to-red-700 p-0.5 mx-auto mb-3">
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <Image
-                      src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=256&h=256&fit=crop&crop=face"
+                      src="/candidate.jpg"
                       alt="நெ. சித்ரராசு"
                       width={256}
                       height={256}
