@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "திரு. மு. கவியரசு | Candidate Story",
-  description:
-    "தமிழ் மக்கள் முன்னேற்ற கழகம் - திருவண்ணாமலை வார்டு 42 வேட்பாளர்",
+  title: "Candidate Story | ownstory",
+  description: "Political candidate stories and constituency information",
 };
 
 export default function RootLayout({
