@@ -187,7 +187,7 @@ export default function CandidateStoryTamil() {
                 <div className="w-full h-full rounded-full overflow-hidden">
                   <Image
                     src="/candidate.jpg"
-                    alt="நெ. சித்ரராசு"
+                    alt="நே.சிற்றரசு"
                     width={400}
                     height={400}
                     className="w-full h-full object-cover"
@@ -204,9 +204,9 @@ export default function CandidateStoryTamil() {
 
             {/* Name & Party */}
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-2 leading-tight">
-              நெ. சித்ரராசு
+              நே.சிற்றரசு
             </h1>
-            <p className="text-xs text-white/40 mb-2">M.A., M.Phil.</p>
+            <p className="text-xs text-white/40 mb-2">M.A.,M.Phil.,</p>
             <p className="text-base md:text-lg text-red-300 font-semibold mb-2">
               திராவிட முன்னேற்ற கழகம் (DMK)
             </p>
@@ -300,14 +300,14 @@ export default function CandidateStoryTamil() {
               மக்களுக்கு ஒரு செய்தி
             </h2>
             <p className="text-sm text-charcoal-light mb-6">
-              சென்னை மேற்கு மாவட்டம் — நெ. சித்ரராசு பேசுகிறார்
+              சென்னை மேற்கு மாவட்டம் — நே.சிற்றரசு பேசுகிறார்
             </p>
 
             {/* Video Embed */}
             <div className="relative rounded-2xl overflow-hidden bg-charcoal-dark aspect-[9/16] max-w-sm mx-auto mb-8 shadow-floating">
               <iframe
                 src="https://www.youtube.com/embed/IKEqP11S-1U?start=2"
-                title="நெ. சித்ரராசு — அண்ணா நகர் தொகுதி செய்தி"
+                title="நே.சிற்றரசு — அண்ணா நகர் தொகுதி செய்தி"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full border-0"
@@ -503,7 +503,7 @@ export default function CandidateStoryTamil() {
                   <div className="w-full h-full rounded-full overflow-hidden">
                     <Image
                       src="/candidate.jpg"
-                      alt="நெ. சித்ரராசு"
+                      alt="நே.சிற்றரசு"
                       width={256}
                       height={256}
                       className="w-full h-full object-cover"
@@ -511,7 +511,7 @@ export default function CandidateStoryTamil() {
                   </div>
                 </div>
                 <h3 className="text-base font-bold text-white mb-0.5">
-                  நெ. சித்ரராசு
+                  நே.சிற்றரசு
                 </h3>
                 <p className="text-[11px] text-red-300 font-medium mb-1">
                   திராவிட முன்னேற்ற கழகம்
@@ -596,7 +596,7 @@ export default function CandidateStoryTamil() {
                 நன்றியுடனும் அர்ப்பணிப்புடனும்,
               </p>
               <p className="text-red-700 font-bold text-base">
-                நெ. சித்ரராசு
+                நே.சிற்றரசு
               </p>
 
               {/* Stars */}
