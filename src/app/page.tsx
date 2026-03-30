@@ -303,26 +303,15 @@ export default function CandidateStoryTamil() {
               சென்னை மேற்கு மாவட்டம் — நெ. சித்ரராசு பேசுகிறார்
             </p>
 
-            {/* Video Thumbnail */}
-            <div className="relative rounded-2xl overflow-hidden bg-charcoal-dark aspect-video mb-8 shadow-floating">
-              <Image
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=720&h=400&fit=crop&crop=face"
-                alt="Video message"
-                width={720}
-                height={400}
-                className="w-full h-full object-cover opacity-70"
+            {/* Video Embed */}
+            <div className="relative rounded-2xl overflow-hidden bg-charcoal-dark aspect-[9/16] max-w-sm mx-auto mb-8 shadow-floating">
+              <iframe
+                src="https://www.youtube.com/embed/IKEqP11S-1U?start=2"
+                title="நெ. சித்ரராசு — அண்ணா நகர் தொகுதி செய்தி"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-2xl cursor-pointer hover:bg-white hover:scale-105 transition-all">
-                  <Play className="w-7 h-7 text-red-600 ml-1" />
-                </div>
-                <p className="text-white text-sm font-medium mt-3">
-                  நெ. சித்ரராசு
-                </p>
-              </div>
-              <div className="absolute bottom-3 right-3 bg-black/60 text-white text-xs px-2.5 py-1 rounded-lg">
-                1:00
-              </div>
             </div>
 
             {/* Complaint Card — DMK Red Gradient */}
