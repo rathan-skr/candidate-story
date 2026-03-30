@@ -523,50 +523,260 @@ export default function WeddingInvitationV2() {
                 })}
               </div>
 
-              {/* Feature Image Preview */}
-              <div className="relative h-80 md:h-[480px] rounded-3xl overflow-hidden shadow-floating group">
-                {features.map((feature, i) => (
-                  <div
-                    key={i}
-                    className={`absolute inset-0 transition-opacity duration-700 ${
-                      activeFeature === i ? "opacity-100" : "opacity-0"
-                    }`}
-                  >
-                    <Image
-                      src={feature.image}
-                      alt={feature.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  </div>
-                ))}
-                <div className="absolute bottom-5 left-5 right-5 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                  <div className="flex items-center gap-3">
-                    <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${features[activeFeature].gradient} flex items-center justify-center`}>
-                      {(() => {
-                        const ActiveIcon = features[activeFeature].icon;
-                        return <ActiveIcon className="w-5 h-5 text-white" />;
-                      })()}
+              {/* Feature Demo Preview — Phone Mockup */}
+              <div className="flex justify-center">
+                <div className="relative w-[300px] md:w-[320px]">
+                  {/* Phone Frame */}
+                  <div className="bg-charcoal-dark rounded-[2.5rem] p-3 shadow-floating">
+                    {/* Notch */}
+                    <div className="absolute top-3 left-1/2 -translate-x-1/2 w-24 h-5 bg-charcoal-dark rounded-b-2xl z-10" />
+                    {/* Screen */}
+                    <div className="bg-white rounded-[2rem] overflow-hidden relative min-h-[520px]">
+                      {/* Progress dots */}
+                      <div className="absolute top-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+                        {features.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setActiveFeature(i)}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${
+                              activeFeature === i ? "w-5 bg-rose-500" : "w-1.5 bg-gray-300"
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Demo 0: Share via Link & WhatsApp */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 0 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="relative h-36">
+                          <Image src={img.flowers} alt="Wedding" fill className="object-cover" sizes="320px" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-white" />
+                        </div>
+                        <div className="p-5 -mt-6 relative">
+                          <h4 className="text-base font-bold text-charcoal-dark mb-1">James & Priya</h4>
+                          <p className="text-[10px] text-charcoal-light mb-4">December 15, 2026</p>
+                          <p className="text-xs text-charcoal-light mb-4">Share your wedding invitation instantly with everyone you love.</p>
+                          <div className="space-y-2.5">
+                            <button className="w-full flex items-center justify-center gap-2 bg-green-500 text-white text-xs font-semibold rounded-xl py-2.5 shadow-sm">
+                              <Send className="w-3.5 h-3.5" /> Share on WhatsApp
+                            </button>
+                            <button className="w-full flex items-center justify-center gap-2 bg-rose-500 text-white text-xs font-semibold rounded-xl py-2.5 shadow-sm">
+                              <Link2 className="w-3.5 h-3.5" /> Copy Invite Link
+                            </button>
+                            <div className="bg-warm-50 rounded-xl p-3 border border-warm-200/40">
+                              <p className="text-[10px] text-charcoal-light mb-1.5 font-medium">Your invite link</p>
+                              <div className="flex items-center gap-2 bg-white rounded-lg px-3 py-2 border border-warm-200/60">
+                                <Link2 className="w-3 h-3 text-rose-400 flex-shrink-0" />
+                                <span className="text-[10px] text-charcoal truncate">ownstory.co/story/james-priya</span>
+                              </div>
+                            </div>
+                            <div className="flex items-center gap-2 mt-2">
+                              <div className="flex -space-x-1.5">
+                                {["bg-rose-300", "bg-blue-300", "bg-amber-300", "bg-green-300"].map((c, i) => (
+                                  <div key={i} className={`w-5 h-5 rounded-full ${c} border border-white`} />
+                                ))}
+                              </div>
+                              <p className="text-[10px] text-charcoal-light">24 guests opened your invite</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Demo 1: Interactive RSVP */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 1 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="bg-gradient-to-br from-rose-400 to-pink-500 p-5 pt-10 text-center text-white">
+                          <p className="text-lg font-bold">You&apos;re Invited!</p>
+                          <p className="text-[10px] text-white/70">James & Priya — Dec 15, 2026</p>
+                        </div>
+                        <div className="p-5 space-y-3">
+                          <p className="text-sm font-bold text-charcoal-dark">RSVP</p>
+                          <div className="flex gap-2">
+                            <button className="flex-1 bg-green-50 border-2 border-green-400 text-green-700 text-xs font-semibold rounded-xl py-2.5 flex items-center justify-center gap-1">
+                              <Check className="w-3.5 h-3.5" /> Attending
+                            </button>
+                            <button className="flex-1 bg-warm-50 border border-warm-200 text-charcoal-light text-xs rounded-xl py-2.5">
+                              Can&apos;t Make It
+                            </button>
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-charcoal-light font-medium">Your Name</label>
+                            <div className="bg-warm-50 rounded-lg px-3 py-2 mt-1 border border-warm-200/60 text-xs text-charcoal">Sarah Johnson</div>
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-charcoal-light font-medium">Plus One?</label>
+                            <div className="bg-warm-50 rounded-lg px-3 py-2 mt-1 border border-warm-200/60 text-xs text-charcoal">Michael Johnson</div>
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-charcoal-light font-medium">Dietary Restrictions</label>
+                            <div className="flex flex-wrap gap-1.5 mt-1">
+                              {["None", "Vegetarian", "Vegan", "Gluten-Free", "Halal"].map((d, i) => (
+                                <span key={i} className={`text-[9px] px-2.5 py-1 rounded-full border font-medium ${i === 1 ? "bg-rose-50 border-rose-300 text-rose-700" : "bg-white border-warm-200 text-charcoal-light"}`}>{d}</span>
+                              ))}
+                            </div>
+                          </div>
+                          <div>
+                            <label className="text-[10px] text-charcoal-light font-medium">Personal Note</label>
+                            <div className="bg-warm-50 rounded-lg px-3 py-2 mt-1 border border-warm-200/60 text-xs text-charcoal/60 italic">Can&apos;t wait to celebrate with you...</div>
+                          </div>
+                          <button className="w-full bg-rose-500 text-white text-xs font-semibold rounded-xl py-2.5 flex items-center justify-center gap-1.5 shadow-sm">
+                            <Send className="w-3.5 h-3.5" /> Confirm RSVP
+                          </button>
+                        </div>
+                      </div>
+
+                      {/* Demo 2: Love Story Timeline */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 2 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="bg-gradient-to-br from-red-400 to-rose-500 p-5 pt-10 text-center text-white">
+                          <p className="text-lg font-bold">Our Love Story</p>
+                          <p className="text-[10px] text-white/70">James & Priya</p>
+                        </div>
+                        <div className="p-5">
+                          <div className="relative border-l-2 border-rose-200 pl-5 space-y-5">
+                            {[
+                              { date: "Mar 2020", title: "First Met", desc: "At a coffee shop in Mumbai — he spilled his latte", img: img.couple },
+                              { date: "Jun 2021", title: "First Trip Together", desc: "A magical week in Goa that changed everything", img: img.dancing },
+                              { date: "Dec 2024", title: "The Proposal", desc: "Under the stars at Marine Drive — she said YES!", img: img.rings },
+                              { date: "Dec 2026", title: "The Wedding", desc: "St. Mary's Church, Mumbai", img: img.venue },
+                            ].map((event, i) => (
+                              <div key={i} className="relative">
+                                <div className="absolute -left-[1.6rem] top-0 w-3 h-3 rounded-full bg-rose-400 border-2 border-white" />
+                                <p className="text-[9px] text-rose-500 font-bold mb-0.5">{event.date}</p>
+                                <p className="text-xs font-bold text-charcoal-dark">{event.title}</p>
+                                <p className="text-[10px] text-charcoal-light mb-1.5">{event.desc}</p>
+                                <div className="relative h-14 rounded-lg overflow-hidden">
+                                  <Image src={event.img} alt={event.title} fill className="object-cover" sizes="280px" />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Demo 3: Venue & Map */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 3 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="relative h-44">
+                          <Image src={img.venue} alt="Wedding venue" fill className="object-cover" sizes="320px" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
+                        </div>
+                        <div className="p-5 -mt-6 relative space-y-3">
+                          <div className="bg-white rounded-xl p-3 border border-warm-200/60 shadow-soft">
+                            <div className="flex items-start gap-2.5">
+                              <div className="w-8 h-8 rounded-lg bg-rose-50 flex items-center justify-center flex-shrink-0">
+                                <MapPin className="w-4 h-4 text-rose-500" />
+                              </div>
+                              <div>
+                                <p className="text-[10px] text-rose-500 font-bold">CEREMONY — 4:00 PM</p>
+                                <p className="text-xs font-bold text-charcoal-dark">St. Mary&apos;s Church</p>
+                                <p className="text-[10px] text-charcoal-light">123 Church Road, Bandra, Mumbai</p>
+                              </div>
+                            </div>
+                            <button className="w-full mt-2 text-[10px] bg-rose-50 text-rose-600 font-semibold rounded-lg py-1.5 flex items-center justify-center gap-1">
+                              <MapPin className="w-3 h-3" /> Get Directions
+                            </button>
+                          </div>
+                          <div className="bg-white rounded-xl p-3 border border-warm-200/60 shadow-soft">
+                            <div className="flex items-start gap-2.5">
+                              <div className="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center flex-shrink-0">
+                                <Music className="w-4 h-4 text-purple-500" />
+                              </div>
+                              <div>
+                                <p className="text-[10px] text-purple-500 font-bold">RECEPTION — 7:00 PM</p>
+                                <p className="text-xs font-bold text-charcoal-dark">Grand Ballroom, Taj Hotel</p>
+                                <p className="text-[10px] text-charcoal-light">Apollo Bunder, Colaba, Mumbai</p>
+                              </div>
+                            </div>
+                            <button className="w-full mt-2 text-[10px] bg-purple-50 text-purple-600 font-semibold rounded-lg py-1.5 flex items-center justify-center gap-1">
+                              <MapPin className="w-3 h-3" /> Get Directions
+                            </button>
+                          </div>
+                          <div className="bg-amber-50 rounded-xl p-3 border border-amber-100">
+                            <p className="text-[10px] font-bold text-amber-700 mb-1">Parking & Hotels</p>
+                            <p className="text-[10px] text-amber-600">Valet parking available. Special rate at Taj Hotel — code: JAMESPRIYA</p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Demo 4: Gift Registry */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 4 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="bg-gradient-to-br from-amber-400 to-orange-500 p-5 pt-10 text-center text-white">
+                          <Gift className="w-8 h-8 mx-auto mb-1" />
+                          <p className="text-lg font-bold">Gift Registry</p>
+                          <p className="text-[10px] text-white/70">Your presence is the best gift — but if you wish...</p>
+                        </div>
+                        <div className="p-5 space-y-3">
+                          <div className="bg-white rounded-xl p-3 border border-warm-200/60 shadow-soft">
+                            <p className="text-xs font-bold text-charcoal-dark mb-2">Honeymoon Fund</p>
+                            <div className="w-full h-2 bg-warm-100 rounded-full mb-1.5">
+                              <div className="w-3/4 h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full" />
+                            </div>
+                            <div className="flex justify-between text-[10px]">
+                              <span className="text-charcoal-light">75% funded</span>
+                              <span className="font-bold text-charcoal-dark">$3,750 / $5,000</span>
+                            </div>
+                            <button className="w-full mt-2 bg-amber-50 text-amber-700 text-[10px] font-semibold rounded-lg py-2 flex items-center justify-center gap-1">
+                              <Heart className="w-3 h-3" /> Contribute
+                            </button>
+                          </div>
+                          <p className="text-[10px] font-medium text-charcoal-light">Gift Ideas</p>
+                          {[
+                            { name: "Kitchen Aid Mixer", price: "$349", claimed: true },
+                            { name: "Dyson Air Purifier", price: "$299", claimed: false },
+                            { name: "Le Creuset Dutch Oven", price: "$185", claimed: false },
+                          ].map((gift, i) => (
+                            <div key={i} className="flex items-center justify-between bg-warm-50 rounded-lg px-3 py-2 border border-warm-200/40">
+                              <div className="flex items-center gap-2">
+                                <Gift className="w-3.5 h-3.5 text-amber-500" />
+                                <span className="text-xs text-charcoal-dark">{gift.name}</span>
+                              </div>
+                              {gift.claimed ? (
+                                <span className="text-[9px] bg-green-50 text-green-600 font-semibold px-2 py-0.5 rounded-full">Claimed</span>
+                              ) : (
+                                <span className="text-[10px] font-bold text-charcoal-dark">{gift.price}</span>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Demo 5: Save to Calendar */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${activeFeature === 5 ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8 pointer-events-none"}`}>
+                        <div className="relative h-36">
+                          <Image src={img.decor} alt="Wedding decor" fill className="object-cover" sizes="320px" />
+                          <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-white" />
+                        </div>
+                        <div className="p-5 -mt-6 relative space-y-3">
+                          <div className="bg-white rounded-xl p-4 border border-warm-200/60 shadow-soft text-center">
+                            <Calendar className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
+                            <p className="text-sm font-bold text-charcoal-dark">December 15, 2026</p>
+                            <p className="text-xs text-charcoal-light mb-1">Saturday, 4:00 PM IST</p>
+                            <p className="text-[10px] text-charcoal-light">St. Mary&apos;s Church &rarr; Taj Hotel</p>
+                          </div>
+                          <div className="bg-white rounded-xl p-3 border border-warm-200/60 shadow-soft text-center">
+                            <p className="text-[10px] font-bold text-charcoal-dark mb-2">Countdown</p>
+                            <div className="flex justify-center gap-3">
+                              {[
+                                { val: "258", label: "Days" },
+                                { val: "14", label: "Hours" },
+                                { val: "32", label: "Mins" },
+                              ].map((t, i) => (
+                                <div key={i} className="bg-emerald-50 rounded-lg px-3 py-2 border border-emerald-100">
+                                  <p className="text-lg font-bold text-emerald-600">{t.val}</p>
+                                  <p className="text-[8px] text-emerald-500 font-medium">{t.label}</p>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                          <button className="w-full bg-emerald-500 text-white text-xs font-semibold rounded-xl py-2.5 flex items-center justify-center gap-1.5 shadow-sm">
+                            <Calendar className="w-3.5 h-3.5" /> Add to Calendar
+                          </button>
+                          <div className="flex justify-center gap-2">
+                            {["Google", "Apple", "Outlook"].map((cal, i) => (
+                              <span key={i} className="text-[9px] bg-warm-50 text-charcoal px-2.5 py-1 rounded-lg border border-warm-200/60 font-medium">{cal}</span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-bold text-charcoal-dark">{features[activeFeature].title}</p>
-                      <p className="text-xs text-charcoal-light">{features[activeFeature].desc}</p>
-                    </div>
                   </div>
-                </div>
-                {/* Progress dots */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 flex gap-1.5">
-                  {features.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setActiveFeature(i)}
-                      className={`h-1.5 rounded-full transition-all duration-300 ${
-                        activeFeature === i ? "w-6 bg-white" : "w-1.5 bg-white/50"
-                      }`}
-                    />
-                  ))}
                 </div>
               </div>
             </div>
